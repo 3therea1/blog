@@ -1,7 +1,17 @@
 import fs from "node:fs";
+import crypto from "node:crypto";
 import { marked } from "marked";
 
 const today = new Date().toISOString().slice(0, 10);
+
+function version(file) {
+  const text = fs.readFileSync(`assets/${file}`);
+
+  return crypto.createHash("sha1").update(text).digest("hex").slice(0, 8);
+}
+
+const styleVersion = version("style.css");
+const seaVersion = version("sea.js");
 
 function escape(text) {
   return text
@@ -71,7 +81,7 @@ function page(title, main) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=${styleVersion}">
 </head>
 <body>
   <div class="page">
@@ -86,7 +96,7 @@ ${main}
     <div class="corner bottom-right" lang="ja">日記</div>
   </div>
 
-  <script src="/sea.js"></script>
+  <script src="/sea.js?v=${seaVersion}"></script>
 </body>
 </html>
 `;
