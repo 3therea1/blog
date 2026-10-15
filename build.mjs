@@ -74,15 +74,17 @@ function page(title, main) {
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="corner">
-    <a href="https://3therea1.dev">home</a>
-  </div>
+  <div class="page">
+    <div class="corner">
+      <a href="https://3therea1.dev">home</a>
+    </div>
 
-  <div class="wrap">
+    <div class="wrap">
 ${main}
-  </div>
+    </div>
 
-  <div class="corner bottom-right" lang="ja">日記</div>
+    <div class="corner bottom-right" lang="ja">日記</div>
+  </div>
 
   <script src="/sea.js"></script>
 </body>

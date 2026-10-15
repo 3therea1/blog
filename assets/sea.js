@@ -111,7 +111,7 @@ function sizeSky() {
 function drawSky() {
   const data = skyImg.data;
   const cx = skyW * 0.7;
-  const radius = Math.max(skyW, innerHeight / S) * 0.45;
+  const radius = Math.max(skyW, skyH) * 0.45;
 
   for (let y = 0, i = 0; y < skyH; y++) {
     for (let x = 0; x < skyW; x++, i += 4) {
@@ -160,13 +160,6 @@ addEventListener("resize", () => {
   drawSky();
   build();
 });
-
-new ResizeObserver(() => {
-  if (sky.width !== Math.ceil(sky.clientWidth / S) || sky.height !== Math.ceil(sky.clientHeight / S)) {
-    sizeSky();
-    drawSky();
-  }
-}).observe(sky);
 
 if (!still) {
   requestAnimationFrame(loop);
