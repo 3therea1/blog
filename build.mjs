@@ -64,7 +64,7 @@ function page(title, main) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${escape(title)}</title>
   <meta name="theme-color" content="#9ea8d8">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%233e62aa'/%3E%3Cpath d='M8 2v12M2 8h12M4 4l8 8M12 4l-8 8' stroke='%23f2f5ff' stroke-width='1.2'/%3E%3C/svg%3E">

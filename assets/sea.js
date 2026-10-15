@@ -103,8 +103,8 @@ let skyH;
 let skyImg;
 
 function sizeSky() {
-  skyW = sky.width = Math.ceil(innerWidth / S);
-  skyH = sky.height = Math.ceil(innerHeight / S);
+  skyW = sky.width = Math.ceil(sky.clientWidth / S);
+  skyH = sky.height = Math.ceil(sky.clientHeight / S);
   skyImg = skyCtx.createImageData(skyW, skyH);
 }
 
